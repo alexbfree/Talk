@@ -72,7 +72,7 @@ Roles.fetch ->
     app.stack = new Stack
       controllers:
         recents: Recents
-        hackday: Hackday Experiments
+        hackday: Hackday
         following: Following
         subjects: Subjects
         groups: Groups
