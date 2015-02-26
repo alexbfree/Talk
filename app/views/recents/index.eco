@@ -16,7 +16,7 @@
         <h2>Recent <%= require('controllers/group_viewer').groupName() %> Comments...</h2>
         <div class="groups">
           <div class="list">
-            <%- require('views/recents/groups') groups: @groups %>
+            <%- require('views/hackday/groups') groups: @groups %>
           </div>
         </div>
         
@@ -32,7 +32,7 @@
       <h2>Recent Object Comments...</h2>
       <div class="subjects">
         <div class="list">
-          <%- require('views/recents/subjects') subjects: @subjects %>
+          <%- require('views/hackday/subjects') subjects: @subjects %>
         </div>
       </div>
       
@@ -50,7 +50,7 @@
           <h3><%= titleize getCategoryLabel category %></h3>
           
           <div class="<%= category %> list">
-            <%- require('views/recents/discussions') category: category, discussions: @discussions[category] %>
+            <%- require('views/hackday/discussions') category: category, discussions: @discussions[category] %>
           </div>
           
           <div class="load-more">
@@ -67,7 +67,7 @@
       <h2>Recent Collection Comments...</h2>
       <div class="collections">
         <div class="list">
-          <%- require('views/recents/collections') @ %>
+          <%- require('views/hackday/collections') @ %>
         </div>
       </div>
       

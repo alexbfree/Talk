@@ -12,6 +12,7 @@ Api.init host: apiHost
 AppHeader = require 'controllers/app_header'
 Following = require 'controllers/following'
 Recents = require 'controllers/recents'
+Hackday = require 'controllers/hackday'
 Subjects = require 'controllers/subjects'
 Groups = require 'controllers/groups'
 Collections = require 'controllers/collections'
@@ -71,6 +72,7 @@ Roles.fetch ->
     app.stack = new Stack
       controllers:
         recents: Recents
+        hackday: Hackday Experiments
         following: Following
         subjects: Subjects
         groups: Groups
@@ -85,6 +87,7 @@ Roles.fetch ->
       routes:
         '/': 'recents'
         '/recent': 'recents'
+        '/hackday': 'hackday'
         '/following': 'following'
         '/subjects': 'subjects'
         '/groups': 'groups'
