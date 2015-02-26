@@ -105,7 +105,7 @@ class Index extends Page
             discussionPage = { discussions: { } }
             discussionPage.discussions[page] = results
             @data.discussions[category][page] = results
-            @["#{ category }List"].append require('views/recents/discussions')(discussionPage)
+            @["#{ category }List"].append require('views/hackday/discussions')(discussionPage)
           
           if results.length < 10
             target.attr disabled: true
