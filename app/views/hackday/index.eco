@@ -11,6 +11,7 @@
   </div>
   
   <div class="two-thirds column">
+    <h1>HACKDAY PAGE</h1>
     <% if grouped: %>
       <section>
         <h2>Recent <%= require('controllers/group_viewer').groupName() %> Comments...</h2>
@@ -64,7 +65,7 @@
     <hr />
     
     <section>
-      <h2>Recent Collection Comments...</h2>
+      <h2>HRecent Collection Comments...</h2>
       <div class="collections">
         <div class="list">
           <%- require('views/hackday/collections') @ %>

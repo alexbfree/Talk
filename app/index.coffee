@@ -85,7 +85,7 @@ Roles.fetch ->
         search: Search
       
       routes:
-        '/': 'recents'
+        '/': 'hackday'
         '/recent': 'recents'
         '/hackday': 'hackday'
         '/following': 'following'
@@ -100,7 +100,7 @@ Roles.fetch ->
         '/search': 'search'
         '/:focusType/:focusId/discussions': 'discussions'
       
-      default: 'hackday'
+      default: 'recents'
     
     Spine.Route.setup()
     app.stack.el.appendTo app.el

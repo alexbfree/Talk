@@ -69,11 +69,8 @@ end
 
 config = Pathname.new File.absolute_path "projects/#{ PROJECT }/config.coffee"
 subject_viewer = Pathname.new File.absolute_path "projects/#{ PROJECT }/subject_viewer.coffee"
-hackday_viewer = Pathname.new File.absolute_path "projects/#{ PROJECT }/hackday_viewer.coffee"
 subject_view = Pathname.new File.absolute_path "projects/#{ PROJECT }/subject_viewer.eco"
-hackday_view = Pathname.new File.absolute_path "projects/#{ PROJECT }/hackday_viewer.eco"
 subject_preview = Pathname.new File.absolute_path "projects/#{ PROJECT }/subject_preview.eco"
-hackday_preview = Pathname.new File.absolute_path "projects/#{ PROJECT }/hackday_preview.eco"
 group_viewer = Pathname.new File.absolute_path "projects/#{ PROJECT }/group_viewer.coffee"
 group_view = Pathname.new File.absolute_path "projects/#{ PROJECT }/group_viewer.eco"
 style = Pathname.new File.absolute_path "projects/#{ PROJECT }/project.styl"
@@ -81,11 +78,8 @@ style = Pathname.new File.absolute_path "projects/#{ PROJECT }/project.styl"
 paths = {
   config => Pathname.new('app/lib/config.coffee'),
   subject_viewer => Pathname.new('app/controllers/subject_viewer.coffee'),
-  hackday_viewer => Pathname.new('app/controllers/hackday_viewer.coffee'),
-  hackday_view => Pathname.new('app/views/subjects/hackday_viewer.eco'),
   subject_view => Pathname.new('app/views/subjects/viewer.eco'),
   subject_preview => Pathname.new('app/views/subjects/preview.eco'),
-  hackday_preview => Pathname.new('app/views/subjects/hackday_preview.eco'),
   group_viewer => Pathname.new('app/controllers/group_viewer.coffee'),
   group_view => Pathname.new('app/views/groups/viewer.eco'),
   style => Pathname.new('css/project.styl')

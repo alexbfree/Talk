@@ -36,7 +36,8 @@ class Index extends Page
     super
   
   url: =>
-    "#{ super }/hackday"
+    debugger
+    "#{ super }/recents"
   
   reload: (callback) ->
     if @data
