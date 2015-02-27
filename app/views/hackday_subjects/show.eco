@@ -26,6 +26,16 @@
   <%- require('views/focus/comments') discussionId: @discussion.zooniverse_id, comments: @discussion.comments, count: @discussion.comments_count %>
 </div>
 
+<div class="classifications">
+    <h3>What the crowd thinks:</h3>
+
+    <p>This subject has been classified <%= @classification_count %> times. Consensus <% if @metadata.retire_reason=='consensus'||@metadata.retire_reason=='blank_consensus': %>HAS<% else: %>HAS NOT YET<% end %> been reached:</p>
+    <% for key of @metadata.counters: %>
+    <p><%= @metadata.counters[key] %> people think this subject contains one or more <%= key %>s.</p>
+    <% end %>
+
+</div>
+
 <div class="collections">
   <h3>Collections<%- '<div class="pages"></div>' if @collectionPages > 1 %></h3>
   <% if @collectionPages > 0: %>
