@@ -27,7 +27,7 @@
 
 <div class="collections">
     <h1>HACK DAY SUBJECTS PAGE</h1>
-  <h3>Collections<%- '<div class="pages"></div>' if @collectionPages > 1 %></h3>
+  <h3>HCollections<%- '<div class="pages"></div>' if @collectionPages > 1 %></h3>
   <% if @collectionPages > 0: %>
     <div class="list">
       <%- require('views/collections/list') collections: @collections[1] %>
