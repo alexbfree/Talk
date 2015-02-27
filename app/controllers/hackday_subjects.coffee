@@ -2,14 +2,14 @@ Api = require 'zooniverse/lib/api'
 SubStack = require 'lib/sub_stack'
 Focus = require 'models/focus'
 FocusPage = require 'controllers/focus_page'
-template = require 'views/subjects/show'
+template = require 'views/hackday_subjects/show'
 $ = require 'jqueryify'
 SubjectViewer = require 'controllers/subject_viewer'
 
 class Show extends FocusPage
   template: template
   className: "#{FocusPage::className} subject page"
-  focusType: 'subjects'
+  focusType: 'hackday_subjects'
   
   elements: $.extend
     '.collections .list': 'collectionsList'

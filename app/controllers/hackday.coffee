@@ -36,7 +36,6 @@ class Index extends Page
     super
   
   url: =>
-    debugger
     "#{ super }/recents"
   
   reload: (callback) ->
