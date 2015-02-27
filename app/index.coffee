@@ -14,6 +14,7 @@ Following = require 'controllers/following'
 Recents = require 'controllers/recents'
 Hackday = require 'controllers/hackday'
 Subjects = require 'controllers/subjects'
+Hackday_Subjects = require 'controllers/hackday_subjects'
 Groups = require 'controllers/groups'
 Collections = require 'controllers/collections'
 Boards = require 'controllers/boards'
@@ -73,6 +74,7 @@ Roles.fetch ->
       controllers:
         recents: Recents
         hackday: Hackday
+        hackday_subjects: Hackday_Subjects
         following: Following
         subjects: Subjects
         groups: Groups
@@ -85,9 +87,10 @@ Roles.fetch ->
         search: Search
       
       routes:
-        '/': 'hackday'
+        '/': 'recents'
         '/recent': 'recents'
         '/hackday': 'hackday'
+        '/hackday_subjects': 'hackday_subjects'
         '/following': 'following'
         '/subjects': 'subjects'
         '/groups': 'groups'
