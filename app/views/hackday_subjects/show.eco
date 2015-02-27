@@ -1,4 +1,5 @@
 <header>
+        <h1>HACK DAY SUBJECTS PAGE</h1>
   <h2>
     <%- require('controllers/subject_viewer').subjectTitle(@) %>
 
