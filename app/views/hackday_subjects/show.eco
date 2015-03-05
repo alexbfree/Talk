@@ -1,5 +1,5 @@
 <header>
-        <h1>HACK DAY SUBJECTS PAGE</h1>
+  <h1>HACK DAY SUBJECTS PAGE</h1>
   <h2>
     <%- require('controllers/subject_viewer').subjectTitle(@) %>
 
@@ -28,12 +28,31 @@
 
 <div class="classifications">
     <h3>What the crowd thinks:</h3>
-
-    <p>This subject has been classified <%= @classification_count %> times. Consensus <% if @metadata.retire_reason=='consensus'||@metadata.retire_reason=='blank_consensus': %>HAS<% else: %>HAS NOT YET<% end %> been reached:</p>
-    <% for key of @metadata.counters: %>
-    <p><%= @metadata.counters[key] %> people think this subject contains one or more <%= key %>s.</p>
-    <% end %>
-
+    <div class="summary <%= @crowdData.state %>">
+        <%= @crowdData.message %>.
+        <% if @crowdData.min_classifications_needed: %>
+            At least <%= @crowdData.min_classifications_needed %> more classifications are needed.
+        <% end %>
+    </div>
+    <div class="active active-<%= @crowdData.active %>">
+    <span class="active-label">Image State:</span> <span id="active-value"><% if @crowdData.active: %>Awaiting Further Classifications<% else: %>Classified<% end %></span>
+    </div>
+    <div class="crowd-classifications">
+        <% for classification in @crowdData.allClassificationData: %>
+            <div class="classification">
+                <span class="voters"><%= classification.voters %></span>
+                <span class="voters-label">think that this image contains the species:</span>
+                <div class="species-list">
+                    <% for species, speciesName of classification.speciesData: %>
+                    <div class="species">
+                        <span class="species-name"><%= speciesName %></span>
+                        <img class="species-image" src="<%= species %>.jpg" />
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
 </div>
 
 <div class="collections">

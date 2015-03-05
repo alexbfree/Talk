@@ -3,6 +3,7 @@ SubStack = require 'lib/sub_stack'
 Focus = require 'models/focus'
 FocusPage = require 'controllers/focus_page'
 template = require 'views/hackday_subjects/show'
+util = require 'lib/util'
 $ = require 'jqueryify'
 SubjectViewer = require 'controllers/subject_viewer'
 
@@ -15,7 +16,7 @@ class Show extends FocusPage
     '.collections .list': 'collectionsList'
     '.collections .pages': 'paginateLinks'
     FocusPage::elements
-  
+
   reload: (callback) ->
     if @fetchOnLoad
       Focus.fetch @focusId, (@data) =>
@@ -39,6 +40,7 @@ class Show extends FocusPage
       super
   
   render: ->
+    @data.crowdData = util.buildCrowdData @data
     @subjectViewer?.destroy()
     super
     @subjectViewer = new SubjectViewer el: @el.find('.subject-viewer'), subject: @data
