@@ -1,5 +1,0 @@
-<div class="subject-summaries">
-  <% for subject in @subjects: %>
-    <%- require('views/subjects/summary') subject %>
-  <% end %>
-</div>

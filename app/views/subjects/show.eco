@@ -25,6 +25,41 @@
   <%- require('views/focus/comments') discussionId: @discussion.zooniverse_id, comments: @discussion.comments, count: @discussion.comments_count %>
 </div>
 
+<div class="classifications">
+    <h3>What the crowd thinks:</h3>
+    <div class="summary <%= @crowdData.state %>">
+        <%= @crowdData.message %>.
+    </div>
+    <div class="active active-<%= @crowdData.active %>">
+        <span id="active-value"><% if @crowdData.active: %>Awaiting Further Classifications<% else: %>Classified<% end %></span>
+        <% if @crowdData.min_classifications_needed: %>
+            <span class="active-more-needed">At least <%= @crowdData.min_classifications_needed %> more classifications are needed.</span>
+        <% end %>
+    </div>
+    <div class="crowd-classifications">
+        <% for classification in @crowdData.allClassificationData: %>
+            <div class="classification <% if classification.voters==@crowdData.maxClassificationVoters : %>biggest<% end %>">
+                <span class="voters"><%= classification.voters %></span>
+                <span class="voters-label">voted for</span>
+                <div class="species-list">
+                    <% for species, speciesName of classification.speciesData: %>
+                        <% if species == "blank" : %>
+                          <div class="species">
+                            <span class="no-animals-present">No<br/>Animals<br/>Present</span>
+                          </div>
+                        <% else : %>
+                            <div class="species">
+                                <span class="species-name"><%= speciesName %></span>
+                                <div class="species-image <%= species %>"></div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
 <div class="collections">
   <h3>Collections<%- '<div class="pages"></div>' if @collectionPages > 1 %></h3>
   <% if @collectionPages > 0: %>

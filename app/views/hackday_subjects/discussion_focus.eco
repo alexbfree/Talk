@@ -1,3 +1,0 @@
-<div class="discussion-focus">
-  <%- require('views/subjects/summary') @ %>
-</div>
