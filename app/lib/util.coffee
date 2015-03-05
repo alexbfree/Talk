@@ -141,7 +141,7 @@ self =
       self.pluralize(count, "Thomson's gazelle", "Thomson's gazelles")
     else if species is 'gazellegrants'
       self.pluralize(count, "Grant's gazelle", "Grant's gazelles")
-    else if species in 'otherbird'
+    else if species is 'otherbird'
       self.pluralize(count, "bird (other)", "birds (other)")
     else if species is 'dikdik'
       self.pluralize(count, "dik-dik", "dik-diks")
