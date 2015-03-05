@@ -30,24 +30,30 @@
     <h3>What the crowd thinks:</h3>
     <div class="summary <%= @crowdData.state %>">
         <%= @crowdData.message %>.
-        <% if @crowdData.min_classifications_needed: %>
-            At least <%= @crowdData.min_classifications_needed %> more classifications are needed.
-        <% end %>
     </div>
     <div class="active active-<%= @crowdData.active %>">
-    <span class="active-label">Image State:</span> <span id="active-value"><% if @crowdData.active: %>Awaiting Further Classifications<% else: %>Classified<% end %></span>
+        <span id="active-value"><% if @crowdData.active: %>Awaiting Further Classifications<% else: %>Classified<% end %></span>
+        <% if @crowdData.min_classifications_needed: %>
+            <span class="active-more-needed">At least <%= @crowdData.min_classifications_needed %> more classifications are needed.</span>
+        <% end %>
     </div>
     <div class="crowd-classifications">
         <% for classification in @crowdData.allClassificationData: %>
-            <div class="classification">
+            <div class="classification <% if classification.voters==@crowdData.maxClassificationVoters : %>biggest<% end %>">
                 <span class="voters"><%= classification.voters %></span>
-                <span class="voters-label">think that this image contains the species:</span>
+                <span class="voters-label">voted for</span>
                 <div class="species-list">
                     <% for species, speciesName of classification.speciesData: %>
-                    <div class="species">
-                        <span class="species-name"><%= speciesName %></span>
-                        <img class="species-image" src="<%= species %>.jpg" />
-                    </div>
+                        <% if species == "blank" : %>
+                          <div class="species">
+                            <span class="no-animals-present">No<br/>Animals<br/>Present</span>
+                          </div>
+                        <% else : %>
+                            <div class="species">
+                                <span class="species-name"><%= speciesName %></span>
+                                <div class="species-image <%= species %>"></div>
+                            </div>
+                        <% end %>
                     <% end %>
                 </div>
             </div>

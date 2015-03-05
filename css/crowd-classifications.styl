@@ -1,10 +1,344 @@
+@import "animal_thumbs"
+
+.focus.page .classifications {
+  margin-bottom: 0px;
+  display: table;
+
+  div.active {
+    padding: 5px;
+    margin: 10px 0px 10px;
+    color: #FFFFFF;
+    text-align: center;
+    display: table;
+    padding: 5px 20px;
+    margin: 10px auto;
+
+    > span {
+      display: table-cell;
+      vertical-align: middle;
+      margin: auto;
+    }
+
+    .active-label {
+      padding-top: 3px;
+    }
+
+    .active-more-needed {
+      display: block;
+      padding: 5px;
+      text-align: center;
+    }
+
+    #active-value {
+      font-size: 20px;
+      font-weight: bold;
+      padding-left: 7px;
+      float: left;
+    }
+
+    &.active-false {
+      background-color: #60ac39;
+    }
+
+    &.active-true {
+      background-color: #CC0000;
+    }
+
+  }
+
+}
+
 div.crowd-classifications {
-  img {
-    float: left;
-    height: 68px;
-    overflow: hidden;
-    width: 68px;
-    background: url("images/animal-thumbnails-cache-bust.jpg");
-    background-position: -2px -72px;
+
+  margin: auto;
+  text-align: center;
+
+  div.classification {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #dddddd;
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
+    text-align: center;
+
+    &.biggest {
+      background-color: #ffe562;
+      font-size: 15px;
+
+      span.voters {
+        font-size: 45px;
+      }
+
+      div.species {
+        font-size: 15px;
+      }
+    }
+
+    span.voters {
+      font-size: 35px;
+      display: block;
+      padding: 0px 5px;
+    }
+
+    span.voters-label {
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    div.species-list {
+
+      div.species {
+        height: 90px;
+        display: inline-block;
+        text-align: center;
+        margin-right: 10px;
+
+        .no-animals-present {
+          font-weight: bold;
+          text-align: center;
+          height: 90px;
+          width: 75px;
+          display: table-cell;
+          vertical-align: middle;
+          margin: auto;
+        }
+
+        .species-name {
+          font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          text-align: center;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .species-image {
+          @extends #thumb-for;
+          height: 68px;
+          width: 68px;
+          display: inline-block;
+        }
+
+        .aardvark {
+          @extend #thumb-for.aardvark;
+        }
+
+        .aardwolf {
+          @extend #thumb-for.aardwolf;
+        }
+
+        .baboon {
+          @extend #thumb-for.baboon;
+        }
+
+        .bat {
+          @extend #thumb-for.bat;
+        }
+
+        .batearedfox {
+          @extend #thumb-for.batearedfox;
+        }
+
+        .otherfird {
+          @extend #thumb-for.otherbird;
+        }
+
+        .buffalo {
+          @extend #thumb-for.buffalo;
+        }
+
+        .bushbuck {
+          @extend #thumb-for.bushbuck;
+        }
+
+        .caracal {
+          @extend #thumb-for.caracal;
+        }
+
+        .cattle {
+          @extend #thumb-for.cattle;
+        }
+
+        .cheetah {
+          @extend #thumb-for.cheetah;
+        }
+
+        .civet {
+          @extend #thumb-for.civet;
+        }
+
+        .dikdik {
+          @extend #thumb-for.dikdik;
+        }
+
+        .duiker {
+          @extend #thumb-for.duiker;
+        }
+
+        .eland {
+          @extend #thumb-for.eland;
+        }
+
+        .elephant {
+          @extend #thumb-for.elephant;
+        }
+
+        .gazellegrants {
+          @extend #thumb-for.gazellegrants;
+        }
+
+        .gazellethomsons {
+          @extend #thumb-for.gazellethomsons;
+        }
+
+        .genet {
+          @extend #thumb-for.genet;
+        }
+
+        .giraffe {
+          @extend #thumb-for.giraffe;
+        }
+
+        .guineafowl {
+          @extend #thumb-for.guineafowl;
+        }
+
+        .hare {
+          @extend #thumb-for.hare;
+        }
+
+        .hartebeest {
+          @extend #thumb-for.hartebeest;
+        }
+
+        .hippopotamus {
+          @extend #thumb-for.hippopotamus;
+        }
+
+        .honeybadger {
+          @extend #thumb-for.honeybadger;
+        }
+
+        .hyenaspotted {
+          @extend #thumb-for.hyenaspotted;
+        }
+
+        .hyenastriped {
+          @extend #thumb-for.hyenastriped;
+        }
+
+        .impala {
+          @extend #thumb-for.impala;
+        }
+
+        .insectspider {
+          @extend #thumb-for.insectspider;
+        }
+
+        .jackal {
+          @extend #thumb-for.jackal;
+        }
+
+        .koribustard {
+          @extend #thumb-for.koribustard;
+        }
+
+        .leopard {
+          @extend #thumb-for.leopard;
+        }
+
+        .lionfemale {
+          @extend #thumb-for.lionfemale;
+        }
+
+        .lionmale {
+          @extend #thumb-for.lionmale;
+        }
+
+        .mongoose {
+          @extend #thumb-for.mongoose;
+        }
+
+        .ostrich {
+          @extend #thumb-for.ostrich;
+        }
+
+        .porcupine {
+          @extend #thumb-for.porcupine;
+        }
+
+        .reedbuck {
+          @extend #thumb-for.reedbuck;
+        }
+
+        .reptiles {
+          @extend #thumb-for.reptiles;
+        }
+
+        .rhinoceros {
+          @extend #thumb-for.rhinoceros;
+        }
+
+        .rodents {
+          @extend #thumb-for.rodents;
+        }
+
+        .secretarybird {
+          @extend #thumb-for.secretarybird;
+        }
+
+        .serval {
+          @extend #thumb-for.serval;
+        }
+
+        .steenbok {
+          @extend #thumb-for.steenbok;
+        }
+
+        .topi {
+          @extend #thumb-for.topi;
+        }
+
+        .vervetmonkey {
+          @extend #thumb-for.vervetmonkey;
+        }
+
+        .vulture {
+          @extend #thumb-for.vulture;
+        }
+
+        .warthog {
+          @extend #thumb-for.warthog;
+        }
+
+        .waterbuck {
+          @extend #thumb-for.waterbuck;
+        }
+
+        .wildcat {
+          @extend #thumb-for.wildcat;
+        }
+
+        .zebra {
+          @extend #thumb-for.zebra;
+        }
+
+        .zorilla {
+          @extend #thumb-for.zorilla;
+        }
+
+        .human {
+          @extend #thumb-for.human;
+        }
+
+        .wildebeest {
+          @extend #thumb-for.wildebeest;
+        }
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
   }
 }

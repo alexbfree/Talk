@@ -14,6 +14,8 @@ self =
     if response.metadata
       crowdData.allClassificationData = self.getAllClassifications response.metadata.counters
       crowdData.maxClassificationID = self.getMaxClassificationID response.metadata.counters
+      crowdData.maxClassificationData = {}
+      crowdData.maxClassificationData.voters = 0
       crowdData.active = false
       if (crowdData.maxClassificationID)
         crowdData.maxClassificationVoters = response.metadata.counters[crowdData.maxClassificationID]
@@ -59,7 +61,7 @@ self =
             if Object.keys(response.metadata.counters).length == 2
               crowdData.active = true
               crowdData.state = "active_either_blank_or_agreed_animals"
-              crowdData.message = "The crowd is still classifying this subject. There is disagreement as to whether any animals are present, but not as to which species are present if the subject is not empty"
+              crowdData.message = "The crowd is still classifying this subject. There is disagreement as to whether any animals are present, but not as to which species are present"
               crowdData.min_classifications_needed = CLASSIFICATION_DOMINANCE_THRESHOLD - crowdData.maxClassificationData.voters
             else
               crowdData.active = true
@@ -122,12 +124,13 @@ self =
     classifications
 
   getHumanFriendlySpecies: (species, count = 2) ->
-    if species in ['wildebeest', 'zebra', 'buffalo', 'impala', 'hartebeest', 'topi']
+    if species in ['wildebeest', 'buffalo', 'impala', 'hartebeest', 'topi']
       species
     else if species in ['elephant', 'warthog', 'reedbuck', 'human', 'giraffe', 'waterbuck',
                         'aardvark', 'bushbuck', 'cheetah', 'baboon', 'jackal', 'serval',
                         'bat', 'caracal', 'civet', 'duiker', 'genet', 'hare', 'leopard',
-                        'mongoose', 'porcupine', 'steenbok', 'eland', 'vulture', 'wildcat', 'zorilla']
+                        'mongoose', 'porcupine', 'steenbok', 'eland', 'vulture', 'wildcat',
+                        'zorilla', 'zebra']
       self.pluralize(count, species, species + 's')
     else if species in ['hippopotamus', 'rhinoceros', 'ostrich']
       self.pluralize(count, species, species + 'es')
