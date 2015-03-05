@@ -9,7 +9,6 @@ CLASSIFICATION_BLANK_THRESHOLD = 5
 self =
 
   buildCrowdData: (response) =>
-    debugger
     crowdData = {}
     if response.metadata
       crowdData.allClassificationData = self.getAllClassifications response.metadata.counters
